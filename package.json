@@ -11,13 +11,9 @@
   },
   "build": {
     "appId": "pattern",
-    "files": [
-      "**/*"
-    ],
+    "files": ["**/*"],
     "win": {
-      "target": [
-        "squirrel"
-      ]
+      "target": ["squirrel"]
     }
   },
   "dependencies": {

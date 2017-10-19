@@ -1,6 +1,7 @@
 var resolvePath = require('electron-collection/resolve-path')
 var defaultMenu = require('electron-collection/default-menu')
 var electron = require('electron')
+var path = require('path')
 
 var BrowserWindow = electron.BrowserWindow
 var Menu = electron.Menu
@@ -14,6 +15,7 @@ var windowStyles = {
   titleBarStyle: 'hidden-inset',
   minWidth: 640,
   minHeight: 395,
+  icon: path.join(__dirname, 'assets/icon.png'),
 }
 
 app.setName('pattern')
