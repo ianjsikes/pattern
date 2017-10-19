@@ -10,10 +10,10 @@ var win
 
 var windowStyles = {
   width: 800,
-  height: 1000,
+  height: 400,
   titleBarStyle: 'hidden-inset',
   minWidth: 640,
-  minHeight: 395
+  minHeight: 395,
 }
 
 app.setName('pattern')
@@ -21,11 +21,11 @@ app.setName('pattern')
 var shouldQuit = app.makeSingleInstance(createInstance)
 if (shouldQuit) app.quit()
 
-app.on('ready', function () {
+app.on('ready', function() {
   win = new BrowserWindow(windowStyles)
   win.loadURL('file://' + resolvePath('./index.html'))
 
-  win.webContents.on('did-finish-load', function () {
+  win.webContents.on('did-finish-load', function() {
     win.show()
     var menu = Menu.buildFromTemplate(defaultMenu(app, electron.shell))
     Menu.setApplicationMenu(menu)
@@ -34,16 +34,16 @@ app.on('ready', function () {
     }
   })
 
-  win.on('closed', function () {
+  win.on('closed', function() {
     win = null
   })
 })
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', function() {
   app.quit()
 })
 
-function createInstance () {
+function createInstance() {
   if (win) {
     if (win.isMinimized()) win.restore()
     win.focus()
